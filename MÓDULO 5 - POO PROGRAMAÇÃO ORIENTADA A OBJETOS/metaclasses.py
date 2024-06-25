@@ -93,3 +93,4 @@ print(p1.attr)
 print(p1)
 
 #resumindo o new cria e retorna a metaclass enquanto o call cria e retorna a instancia
+
