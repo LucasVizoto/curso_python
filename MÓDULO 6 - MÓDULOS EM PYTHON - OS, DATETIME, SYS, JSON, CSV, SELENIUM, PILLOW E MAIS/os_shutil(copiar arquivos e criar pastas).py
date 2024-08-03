@@ -14,10 +14,11 @@ DESKTOP = os.path.join(HOME, 'Desktop')
 PASTA_ORIGINAL = os.path.join(DESKTOP,'Exemplo')
 NOVA_PASTA = os.path.join(DESKTOP,'NOVA_PASTA')
 
-print(HOME)
+
+# print(HOME)
 
 os.makedirs(NOVA_PASTA, exist_ok=True) # exist_ok=True significa que não vai executar caso exita
-# Cria a pasta nova se não existir (Make dir, fazer diretório)
+# # Cria a pasta nova se não existir (Make dir, fazer diretório)
 
 for root, dirs, files in os.walk(PASTA_ORIGINAL):
     
@@ -34,3 +35,9 @@ for root, dirs, files in os.walk(PASTA_ORIGINAL):
         print(file)
 
 
+# ----------------------------------------------------------------
+
+# Usando o copytree
+shutil.rmtree(NOVA_PASTA, ignore_errors=True)
+shutil.copytree(PASTA_ORIGINAL, NOVA_PASTA )
+shutil.move(NOVA_PASTA, NOVA_PASTA + "_EITA")
